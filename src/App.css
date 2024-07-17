@@ -7,6 +7,9 @@ html, body {
   padding: 0;
   background-color: #FFF7ED;
   font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 body::-webkit-scrollbar {
