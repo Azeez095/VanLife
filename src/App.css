@@ -8,7 +8,6 @@ html, body {
   background-color: #FFF7ED;
   font-family: "Inter", sans-serif;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -145,4 +144,54 @@ header a:hover {
   background-color: #161616;
   color: white;
   border-radius: 10px;
+}
+.van-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 0;
+  list-style-type: none;
+  justify-content: space-between;
+
+ 
+}
+.van-info{
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+}
+
+.van-info>p{
+  font-size: small;
+}
+.van-type{
+  background-color: #FF8C38;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 70px;
+  border-radius: 5px;
+}
+.van-list-container{
+  margin: 0 15px;
+}
+
+.van-type-list >ul{
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  background-color: #FFCC8D;
+  border-radius: 3px;
+  align-items: center;
+}
+
+.van-type-list>ul>li{
+  background-color: #FFCC8D;
+  border-radius: 3px;
+  margin: 10px;
 }
