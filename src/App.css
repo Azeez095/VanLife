@@ -18,6 +18,7 @@ display: none;
 body {
 -ms-overflow-style: none;
 scrollbar-width: none;
+position: relative;
 }
 
 header {
@@ -179,6 +180,7 @@ header a:hover {
 }
 .van-list-container{
   margin: 0 15px;
+  margin-bottom: 40px;
 }
 
 .van-type-list >ul{
@@ -194,4 +196,107 @@ header a:hover {
   background-color: #FFCC8D;
   border-radius: 3px;
   margin: 10px;
+}
+
+.van-detail-container {
+  padding: 27px;
+}
+
+.van-detail-container .back-button {
+  color: black;
+  text-decoration: none;
+}
+
+.van-detail-container .back-button:visited {
+  
+}
+
+.van-detail-container .back-button span {
+  text-decoration: underline;
+}
+
+.van-detail {
+  display: flex;
+  flex-direction: column;
+  color: #161616;
+}
+
+.van-detail img {
+  border-radius: 5px;
+  margin-block: 47px;
+
+}
+
+.van-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.van-detail > i {
+  align-self: flex-start;
+}
+
+.van-detail .van-price {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.van-detail .van-price span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.van-detail .link-button {
+  background-color: #FF8C38;
+  color: white;
+  font-size: 1.125rem;
+}
+.layout {
+  color: black;
+}
+
+.host-nav {
+  display: flex;
+}
+
+.host-nav a {
+  text-decoration: none;
+  color: #4D4D4D;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.host-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.footer {
+  background-color: #161616;
+  color: white;
+  text-align: center;
+  padding-block: 10px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+a.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
+}
+.host-img{
+  width: 70px;
+  height:120px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+.host-van{
+  display: flex;
+  margin-left: 30px;
+  margin-bottom: 3opx;
+}
+.host-vans-container{
+  color: #161616;
+  margin-bottom: 30px;
 }

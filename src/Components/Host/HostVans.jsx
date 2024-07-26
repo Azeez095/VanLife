@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import api from '../utils/api';
+import React, { useState, useEffect } from 'react'
+import api from '../../utils/api'
 
-function VanDetail() {
-    const { id } = useParams();
+function HostVans() {
     const [van, setVan] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -11,13 +9,13 @@ function VanDetail() {
     useEffect(() => {
         let isMounted = true;
         api
-            .get(`/Vans/${id}`)
+            .get('/Vans')
             .then((res) => {
                 if (isMounted) {
                     // Log the response to understand its structure
                     console.log('API Response:', res);
-                    if (res.data && res.data.van) {
-                        setVan(res.data.van);
+                    if (res.data && res.data.vans) {
+                        setVan(res.data.vans);
                     } else {
                         setVan(null);
                         setError("Unexpected response format");
@@ -36,7 +34,7 @@ function VanDetail() {
         return () => {
             isMounted = false;
         };
-    }, [id]); // Dependency array includes id to refetch when it changes
+    }, []); 
 
     if (loading) {
         return <h2>Loading...</h2>;
@@ -49,19 +47,24 @@ function VanDetail() {
     if (!van) {
         return <h2>No van details available</h2>;
     }
-    console.log(van)
-    return (
-        <div className="van-detail-container">
-            <div className="van-detail">
-                <img src={van.imageUrl} alt={van.name} />
-                <i className={`van-type ${van.type} selected`}>{van.type}</i>
-                <h2>{van.name}</h2>
-                <p className="van-price"><span>${van.price}</span>/day</p>
-                <p>{van.description}</p>
-                <button className="link-button">Rent this van</button>
-            </div>
+    
+
+  return (
+    <div className="host-vans-container">
+        <h1>Your listed Van</h1>
+        <div>
+            {van.map((v) => (
+                <div key={v.id} className="host-van">
+                    <img src={v.imageUrl} alt="" className='host-img'/>
+                    <div className="host-van-details">
+                        <h3>{v.name}</h3>
+                        <p>${v.price}/day</p>
+                    </div>
+                </div>
+            ))}
         </div>
-    );
+    </div>
+  )
 }
 
-export default VanDetail;
+export default HostVans

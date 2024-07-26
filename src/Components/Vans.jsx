@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import {Link} from 'react-router-dom';
+import api from '../utils/api';
 
 function Vans() {
     const [vans, setVans] = useState([]);
@@ -9,8 +9,8 @@ function Vans() {
 
     useEffect(() => {
         let isMounted = true;
-        axios
-            .get('https://api.mockfly.dev/mocks/4f1d8aef-1b46-40b2-a09c-ee27512e497c/Vans')
+        api
+            .get('/Vans')
             .then((res) => {
                 if (isMounted) {
                     // Log the response to understand its structure
@@ -43,17 +43,18 @@ function Vans() {
     if (error) {
         return <p>Error: {error}</p>;
     }
+    
 
     return (
         <div className="van-list-container">
             <h3>Explore our Vans Option</h3>
             <div className='van-type-list'>
-            <ul>
-                <li>Simple</li>
-                <li>Luxury</li>
-                <li>Rugged</li>
-                <a href="#">Clear Filter</a>
-            </ul>
+                <ul>
+                    <li>Simple</li>
+                    <li>Luxury</li>
+                    <li>Rugged</li>
+                    <a href="#">Clear Filter</a>
+                </ul>
             </div>
             <ul className='van-list'>
                 {vans.length > 0 ? (
