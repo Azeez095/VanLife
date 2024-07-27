@@ -286,6 +286,11 @@ a.active-link {
   text-decoration: underline;
   color: #161616;
 }
+.host-van-nav a.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
+}
 .host-img{
   width: 150px;
   height:150px;
@@ -315,7 +320,7 @@ a.active-link {
 }
 .host-van-detail{
   display: flex;
-  justify-content: center;
+
   margin-left: 20px;
   padding: 0;
   align-items: center;
@@ -363,4 +368,28 @@ a.back-button {
 }
 .host-van-detail-container{
   margin-top: 30px;
+}
+
+.host-van-detail-info{
+  margin-left:20px ;
+}
+.host-van-detail-info > h4 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  color:#000
+}
+.host-van-detail-info > h4 > span {
+  font-weight: 500;
+}
+.host-van-detail-image{
+  width:100px;
+  height:100px;
+  object-fit: contain;
+  margin: 20px;
+}
+.host-van-price{
+  color:rgb(87, 84, 84);
+  margin-left: 20px;
+  
 }

@@ -69,7 +69,16 @@ function HostVansDetails() {
 
             </div>
         </div>
-        <Outlet />
+        
+        <nav className='host-van-nav'>
+            <NavLink to="."
+            end 
+            className={({isActive}) => isActive ? "active-link" : null}>Details</NavLink>
+            <NavLink to="pricing" className={({isActive}) => isActive ? "active-link" : null}>Pricing</NavLink>
+            <NavLink to = "photos" className={({isActive}) => isActive ? "active-link" : null}>Photos</NavLink>
+        </nav> 
+        
+        <Outlet context={{van}} />
     </div>
   )
 }
