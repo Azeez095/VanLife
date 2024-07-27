@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import api from '../../utils/api'
+import { Link } from 'react-router-dom';
 
 function HostVans() {
     const [van, setVan] = useState(null);
@@ -55,11 +56,14 @@ function HostVans() {
         <div>
             {van.map((v) => (
                 <div key={v.id} className="host-van">
+                    <Link to={`/host/vans/${v.id}`}>
                     <img src={v.imageUrl} alt="" className='host-img'/>
                     <div className="host-van-details">
                         <h3>{v.name}</h3>
                         <p>${v.price}/day</p>
+                    
                     </div>
+                    </Link>
                 </div>
             ))}
         </div>

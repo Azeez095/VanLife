@@ -49,11 +49,11 @@ function VanDetail() {
     if (!van) {
         return <h2>No van details available</h2>;
     }
-    console.log(van)
+
     return (
         <div className="van-detail-container">
             <div className="van-detail">
-                <img src={van.imageUrl} alt={van.name} />
+                <img src={van.imageUrl} alt={van.name} width={"100%"}/>
                 <i className={`van-type ${van.type} selected`}>{van.type}</i>
                 <h2>{van.name}</h2>
                 <p className="van-price"><span>${van.price}</span>/day</p>

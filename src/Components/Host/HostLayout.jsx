@@ -9,14 +9,14 @@ function HostLayout() {
             className={({isActive}) => isActive ? "active-link" : null}>
             Dashboard</NavLink>
 
-            <NavLink to='/host/income'
+            <NavLink to='income'
             className={({isActive}) => isActive ? "active-link" : null}>
             Income</NavLink>
 
-            <NavLink to="/host/vans"
-            >
+            <NavLink to="vans"
+            className={({isActive}) => isActive ? "active-link" : null}>
             Vans</NavLink>
-            <NavLink to='/host/reviews'
+            <NavLink to='reviews'
             className={({isActive}) => isActive ? "active-link" : null}>
             Reviews</NavLink>
         </nav>
